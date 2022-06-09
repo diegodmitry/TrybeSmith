@@ -8,8 +8,10 @@ const validateFieldProduct = (req: Request, res: Response, next: NextFunction) =
   }).validate(req.body);
 
   if (error) {
-    if (error.message.includes('is required')) return res.status(400).json(error.message);
-    return res.status(422).json(error.message);
+    if (error.message.includes('is required')) {
+      return res.status(400).json({ message: error.message });
+    }
+    return res.status(422).json({ message: error.message });
   }
 
   next();
