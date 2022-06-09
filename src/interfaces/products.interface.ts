@@ -4,3 +4,8 @@ export interface IProduct {
   amount: string;
   orderId?: null | number;
 }
+
+export interface IProductCreate {
+  name: string,
+  amount: string;
+}
