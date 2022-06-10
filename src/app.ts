@@ -3,6 +3,7 @@ import express from 'express';
 import ProductsRouter from './routes/products.routes';
 import UsersRouter from './routes/users.routes';
 import OrdersRouter from './routes/orders.routes';
+import LoginRouter from './routes/login.routes';
 import errorHandler from './middlewares/errorHandler';
 
 const app = express();
@@ -14,6 +15,8 @@ app.use(ProductsRouter);
 app.use(UsersRouter);
 
 app.use(OrdersRouter);
+
+app.use(LoginRouter);
 
 app.use(errorHandler);
 
